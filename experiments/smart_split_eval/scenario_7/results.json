@@ -18,15 +18,15 @@
     "cost": 0.0066941000000000014,
     "calls": 37,
     "time": 173.15400433540344,
-    "correct": 7,
+    "correct": 9,
     "missed": 8
   },
   "few_shot": {
     "cost": 0.011507800000000002,
     "calls": 37,
     "time": 231.92319560050964,
-    "correct": 9,
-    "missed": 6
+    "correct": 13,
+    "missed": 4
   },
   "phases": {
     "attacker_change_user.0.84": [
