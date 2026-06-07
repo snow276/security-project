@@ -27,7 +27,7 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from hybrid_pipeline.config import LLMConfig, PipelineConfig
 from hybrid_pipeline.cluster_sampler import ClusterSampler

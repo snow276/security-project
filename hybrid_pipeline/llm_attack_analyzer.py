@@ -502,8 +502,9 @@ class Tier1Analyzer:
         labels: np.ndarray,
         embeddings: np.ndarray,
         max_clusters: int | None = None,
+            max_workers: int = 10,
     ) -> list[Tier1ClusterSummary]:
-        """Analyze all clusters and collect summaries.
+        """Analyze all clusters and collect summaries in parallel.
 
         Args:
             cluster_infos: List of ClusterInfo for all clusters
@@ -511,16 +512,31 @@ class Tier1Analyzer:
             labels: Cluster labels
             embeddings: Alert embeddings
             max_clusters: If set, only analyze first N clusters (for testing)
+            max_workers: Number of parallel API workers (default 20 for fast I/O)
 
         Returns:
             List of Tier1ClusterSummary
         """
-        summaries = []
-        clusters_to_analyze = cluster_infos[:max_clusters] if max_clusters else cluster_infos
+        import concurrent.futures
+        import threading
 
-        for cluster_info in tqdm(clusters_to_analyze, desc="Tier 1 analysis", unit="cluster"):
+        clusters_to_analyze = cluster_infos[:max_clusters] if max_clusters else cluster_infos
+        _lock = threading.Lock()
+        summaries = []
+
+        def analyze_one(cluster_info: ClusterInfo) -> Tier1ClusterSummary:
             summary = self.analyze_cluster(cluster_info, alert_data, labels, embeddings)
-            summaries.append(summary)
+            with _lock:
+                summaries.append(summary)
+            return summary
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            list(tqdm(
+                executor.map(analyze_one, clusters_to_analyze),
+                total=len(clusters_to_analyze),
+                desc="Tier 1 analysis",
+                unit="cluster",
+            ))
 
         logger.info(
             f"Tier 1 complete: {len(summaries)} clusters analyzed, "
