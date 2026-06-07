@@ -18,3 +18,7 @@ deepseek-apikey.txt
 # IDE
 .vscode/
 .idea/
+
+# Raw LLM output data (large files)
+experiments/*/zs_summaries.json
+experiments/*/fs_summaries.json

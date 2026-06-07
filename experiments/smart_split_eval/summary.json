@@ -911,15 +911,15 @@
         "cost": 0.0066941000000000014,
         "calls": 37,
         "time": 173.15400433540344,
-        "correct": 9,
+        "correct": 7,
         "missed": 8
       },
       "few_shot": {
         "cost": 0.011507800000000002,
         "calls": 37,
         "time": 231.92319560050964,
-        "correct": 13,
-        "missed": 4
+        "correct": 9,
+        "missed": 6
       },
       "phases": {
         "attacker_change_user.0.84": [
@@ -1154,9 +1154,9 @@
     }
   ],
   "total_cost": 0.08102550000000001,
-  "zero_shot_accuracy": 0.5333333333333333,
-  "few_shot_accuracy": 0.84,
-  "net_improvement": 23,
+  "zero_shot_accuracy": 0.5205479452054794,
+  "few_shot_accuracy": 0.8082191780821918,
+  "net_improvement": 21,
   "upgraded": 26,
   "downgraded": 3
 }
