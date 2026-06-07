@@ -1,0 +1,275 @@
+{
+  "scenario": 4,
+  "total_clusters": 24364,
+  "attack_phases": [
+    "attacker_change_user.0.51",
+    "crack_passwords.0.50",
+    "dirb.0.48",
+    "dnsteal.0.42",
+    "dnsteal.1.43",
+    "dnsteal.1.44",
+    "dnsteal.1.45",
+    "dnsteal.2.53",
+    "escalated_sudo_command.0.52",
+    "service_scan.0.46",
+    "webshell_cmd.0.49",
+    "wpscan.0.47"
+  ],
+  "attack_clusters": 18,
+  "zero_shot": {
+    "cost": 0.0091163,
+    "calls": 38,
+    "time": 212.2190637588501,
+    "correct": 10,
+    "missed": 8
+  },
+  "few_shot": {
+    "cost": 0.0131969,
+    "calls": 38,
+    "time": 230.0026376247406,
+    "correct": 16,
+    "missed": 2
+  },
+  "phases": {
+    "attacker_change_user.0.51": [
+      {
+        "cluster_id": 22550,
+        "size": 21,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "多主机对.biz TLD的可疑DNS查询及审计日志中出现新服务/用户参数组合"
+        },
+        "few_shot": {
+          "risk": "critical",
+          "summary": "Web入侵后数据外传与横向移动攻击链，涉及DNS隧道和权限提升"
+        }
+      }
+    ],
+    "crack_passwords.0.50": [
+      {
+        "cluster_id": 22336,
+        "size": 8,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "短时间内多主机出现DNS查询.biz TLD及IDS事件，疑似扫描或探测行为"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似暴力破解与DNS外传组合攻击，涉及CPU异常和邮件认证成功"
+        }
+      }
+    ],
+    "dirb.0.48": [
+      {
+        "cluster_id": 22318,
+        "size": 416007,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "大规模多主机扫描与账户攻击，检测到Web 400错误和邮件认证成功"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似Web应用入侵链：扫描、异常请求、Dovecot认证成功及新事件类型，可能已横向移动至邮件服务器"
+        }
+      }
+    ],
+    "dnsteal.0.42": [
+      {
+        "cluster_id": 1,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "DNS日志中出现新的IP地址，可能是正常网络活动"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "DNS日志中出现新IP地址，疑似DNS隧道或C2通信"
+        }
+      }
+    ],
+    "dnsteal.1.43": [
+      {
+        "cluster_id": 1982,
+        "size": 5,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内网主机短时间内多次查询.biz顶级域，触发DNS频率异常告警，疑似DNS扫描或隧道行为。"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "内部主机通过DNS查询.biz域名且频率异常，疑似DNS隧道数据外传"
+        }
+      }
+    ],
+    "dnsteal.1.44": [
+      {
+        "cluster_id": 5401,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "DNS查询频率异常，可能为扫描或异常通信"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似DNS隧道用于数据外传"
+        }
+      }
+    ],
+    "dnsteal.1.45": [
+      {
+        "cluster_id": 10286,
+        "size": 5,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "内部主机与防火墙同时出现对.biz域名的DNS查询，且频率异常，疑似恶意域名探测。"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "检测到DNS查询异常频率及.biz顶级域查询，疑似数据外传或C2通信"
+        }
+      }
+    ],
+    "dnsteal.2.53": [
+      {
+        "cluster_id": 22809,
+        "size": 22,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "短时内多个主机产生TLS异常及IDS告警，疑似扫描或探测行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似通过TLS握手异常和服务启停组合进行后门安装或隧道通信"
+        }
+      }
+    ],
+    "escalated_sudo_command.0.52": [
+      {
+        "cluster_id": 22552,
+        "size": 8,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "Dovecot 认证成功事件，无异常或攻击迹象"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "短时间内多次Dovecot认证成功，可能为密码喷洒或暴力破解后的成功登录"
+        }
+      },
+      {
+        "cluster_id": 22553,
+        "size": 33,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "短时间内多台主机出现DNS查询到.biz TLD、IDS告警及审计日志异常，疑似内部扫描或探测活动。"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似Web入侵后权限提升与数据外传攻击链，涉及sudo提权、DNS隧道及PAM登录异常"
+        }
+      },
+      {
+        "cluster_id": 22554,
+        "size": 16,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "多个主机上出现审计日志新参数组合及认证成功事件，可能为正常操作"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "权限提升后横向移动至邮件服务器，利用sudo提权并切换用户"
+        }
+      }
+    ],
+    "service_scan.0.46": [
+      {
+        "cluster_id": 22250,
+        "size": 108,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "内网主机发起Nmap扫描并尝试访问Web服务器禁止文件"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "检测到来自多个内网IP的Nmap扫描，涉及服务探测和目录枚举"
+        }
+      }
+    ],
+    "webshell_cmd.0.49": [
+      {
+        "cluster_id": 22324,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "检测到Apache访问请求中存在高熵，疑似扫描或探测行为"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似Webshell上传，Apache请求中发现高熵字符串"
+        }
+      },
+      {
+        "cluster_id": 22325,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求高熵异常，疑似目录扫描或webshell通信"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Apache访问请求发现高熵字符串，疑似webshell上传或命令执行"
+        }
+      },
+      {
+        "cluster_id": 22329,
+        "size": 5,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "疑似内部主机通过DNS查询可疑.biz域名，配合高熵HTTP请求，可能为信息探测或C2通信"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似Webshell上传后通过DNS隧道外传数据至可疑.biz域名"
+        }
+      }
+    ],
+    "wpscan.0.47": [
+      {
+        "cluster_id": 22314,
+        "size": 2,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "Web服务器探测：非常规HTTP方法请求导致400错误"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "来自192.168.131.215的Web服务扫描探测，使用了异常HTTP方法并触发了400错误"
+        }
+      },
+      {
+        "cluster_id": 22315,
+        "size": 26,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache目录枚举扫描，尝试访问禁止目录索引"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Web扫描探测与潜在提权尝试"
+        }
+      },
+      {
+        "cluster_id": 22316,
+        "size": 9663,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内网IP对内部Web服务器进行高频扫描探测，引发大量400错误"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "源IP对内网多台服务器发起大规模Web扫描与参数探测"
+        }
+      }
+    ]
+  }
+}

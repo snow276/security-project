@@ -1,0 +1,48 @@
+{
+  "attack_timeline": "攻击从2025年2月10日开始，持续至2月14日。首先，内部IP 172.27.180.4发起大量TLS异常握手探测（簇70、72等），扫描VPN和防火墙；随后外部IP 172.24.249.224加入，进行持续的TLS协议扫描（簇312、393等）。期间出现可疑C2通信（簇1520），可能已建立控制通道。中期，攻击者对邮件服务器进行暴力破解（簇2108），成功获取部分账号，随后利用窃取的凭证在内网复用登录（簇3320），并进一步发起针对邮件服务器的更大规模暴力破解（簇6819）。此外，还有独立的Web服务器扫描（簇5477）发生。整体呈现从边界探测到凭证窃取、横向移动的链条。",
+  "cluster_relationships": [
+    {
+      "from_cluster_id": 70,
+      "to_cluster_id": 72,
+      "relationship": "reconnaissance_leads_to_reconnaissance",
+      "confidence": 0.9,
+      "reasoning": "两者均源于相同IP 172.27.180.4，时间仅间隔约68秒，均为TLS异常握手探测，属于同一扫描行为的连续阶段。"
+    },
+    {
+      "from_cluster_id": 1480,
+      "to_cluster_id": 1520,
+      "relationship": "reconnaissance_leads_to_command_and_control",
+      "confidence": 0.7,
+      "reasoning": "簇1480记录大量TLS异常告警（可能为探测），紧接着簇1520出现可疑C2通信（.cloud域名），源IP 172.24.249.224，时间相差约1小时，可能先扫描漏洞后建立后门。"
+    },
+    {
+      "from_cluster_id": 2108,
+      "to_cluster_id": 3320,
+      "relationship": "credential_access_leads_to_lateral_movement",
+      "confidence": 0.8,
+      "reasoning": "簇2108成功暴力破解邮件服务器（源10.38.242.195），随后簇3320利用同一批凭证在内网多台主机Dovecot认证成功（含10.70.33.128），属于凭证复用横向移动。"
+    },
+    {
+      "from_cluster_id": 3320,
+      "to_cluster_id": 6819,
+      "relationship": "lateral_movement_leads_to_credential_access",
+      "confidence": 0.85,
+      "reasoning": "簇3320中10.70.33.128被用于批量登录，之后簇6819以该IP为源对邮件服务器再次暴力破解并成功，表明攻击者利用已控主机持续窃取凭证。"
+    }
+  ],
+  "overall_attack_narrative": "攻击者首先通过TLS协议扫描探测边界设备（VPN/防火墙），发现漏洞后植入C2通信，进而对内网邮件服务器进行暴力破解并窃取凭证，再利用获取的凭证在内网横向移动，最终扩大控制范围。整个过程持续约4天，涉及多个攻击阶段。",
+  "suspicious_indicators": [
+    "172.27.180.4",
+    "172.24.249.224",
+    "10.70.33.128",
+    "10.38.242.195",
+    "192.168.188.179",
+    ".cloud TLD (疑似C2域名)",
+    "Dovecot 邮件服务器暴力破解"
+  ],
+  "llm_model_used": "deepseek-v4-flash",
+  "llm_call_cost": 0.0015233,
+  "parse_success": true,
+  "raw_response": "{\n    \"attack_timeline\": \"攻击从2025年2月10日开始，持续至2月14日。首先，内部IP 172.27.180.4发起大量TLS异常握手探测（簇70、72等），扫描VPN和防火墙；随后外部IP 172.24.249.224加入，进行持续的TLS协议扫描（簇312、393等）。期间出现可疑C2通信（簇1520），可能已建立控制通道。中期，攻击者对邮件服务器进行暴力破解（簇2108），成功获取部分账号，随后利用窃取的凭证在内网复用登录（簇3320），并进一步发起针对邮件服务器的更大规模暴力破解（簇6819）。此外，还有独立的Web服务器扫描（簇5477）发生。整体呈现从边界探测到凭证窃取、横向移动的链条。\",\n    \"cluster_relationships\": [\n        {\n            \"from_cluster_id\": 70,\n            \"to_cluster_id\": 72,\n            \"relationship\": \"reconnaissance_leads_to_reconnaissance\",\n            \"confidence\": 0.90,\n            \"reasoning\": \"两者均源于相同IP 172.27.180.4，时间仅间隔约68秒，均为TLS异常握手探测，属于同一扫描行为的连续阶段。\"\n        },\n        {\n            \"from_cluster_id\": 1480,\n            \"to_cluster_id\": 1520,\n            \"relationship\": \"reconnaissance_leads_to_command_and_control\",\n            \"confidence\": 0.70,\n            \"reasoning\": \"簇1480记录大量TLS异常告警（可能为探测），紧接着簇1520出现可疑C2通信（.cloud域名），源IP 172.24.249.224，时间相差约1小时，可能先扫描漏洞后建立后门。\"\n        },\n        {\n            \"from_cluster_id\": 2108,\n            \"to_cluster_id\": 3320,\n            \"relationship\": \"credential_access_leads_to_lateral_movement\",\n            \"confidence\": 0.80,\n            \"reasoning\": \"簇2108成功暴力破解邮件服务器（源10.38.242.195），随后簇3320利用同一批凭证在内网多台主机Dovecot认证成功（含10.70.33.128），属于凭证复用横向移动。\"\n        },\n        {\n            \"from_cluster_id\": 3320,\n            \"to_cluster_id\": 6819,\n            \"relationship\": \"lateral_movement_leads_to_credential_access\",\n            \"confidence\": 0.85,\n            \"reasoning\": \"簇3320中10.70.33.128被用于批量登录，之后簇6819以该IP为源对邮件服务器再次暴力破解并成功，表明攻击者利用已控主机持续窃取凭证。\"\n        }\n    ],\n    \"overall_attack_narrative\": \"攻击者首先通过TLS协议扫描探测边界设备（VPN/防火墙），发现漏洞后植入C2通信，进而对内网邮件服务器进行暴力破解并窃取凭证，再利用获取的凭证在内网横向移动，最终扩大控制范围。整个过程持续约4天，涉及多个攻击阶段。\",\n    \"suspicious_indicators\": [\n        \"172.27.180.4\",\n        \"172.24.249.224\",\n        \"10.70.33.128\",\n        \"10.38.242.195\",\n        \"192.168.188.179\",\n        \".cloud TLD (疑似C2域名)\",\n        \"Dovecot 邮件服务器暴力破解\"\n    ]\n}",
+  "num_clusters_analyzed": 20
+}

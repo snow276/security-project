@@ -1,0 +1,260 @@
+{
+  "scenario": 7,
+  "total_clusters": 3724,
+  "attack_phases": [
+    "attacker_change_user.0.84",
+    "crack_passwords.0.83",
+    "dirb.0.80",
+    "dnsteal.0.76",
+    "dnsteal.1.77",
+    "dnsteal.1.78",
+    "dnsteal.2.86",
+    "escalated_sudo_command.0.85",
+    "service_scan.0.79",
+    "webshell_cmd.0.82",
+    "wpscan.0.81"
+  ],
+  "attack_clusters": 17,
+  "zero_shot": {
+    "cost": 0.006625400000000002,
+    "calls": 37,
+    "time": 150.21703481674194,
+    "correct": 7,
+    "missed": 10
+  },
+  "few_shot": {
+    "cost": 0.0106685,
+    "calls": 37,
+    "time": 171.68690013885498,
+    "correct": 15,
+    "missed": 2
+  },
+  "phases": {
+    "attacker_change_user.0.84": [
+      {
+        "cluster_id": 2479,
+        "size": 9,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "AMiner检测到审计日志中新的事件类型和参数组合，可能是正常行为变化"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似提权与横向移动攻击：通过sudo提权和用户切换进行内网渗透"
+        }
+      }
+    ],
+    "crack_passwords.0.83": [
+      {
+        "cluster_id": 2469,
+        "size": 1,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "CPU使用率异常，系统监控告警，非安全攻击"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "CPU异常波动告警，可能为暴力破解阶段试探"
+        }
+      },
+      {
+        "cluster_id": 2470,
+        "size": 1,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "监控日志中CPU使用率偏离平均值，属于系统性能波动。"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "CPU异常偏离均值，疑似暴力破解尝试"
+        }
+      }
+    ],
+    "dirb.0.80": [
+      {
+        "cluster_id": 2460,
+        "size": 4522,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "短时间内大量账户相关告警，疑似对intranet_server的暴力破解攻击"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Web应用扫描与漏洞利用尝试，触发新事件类型，可能已成功执行攻击"
+        }
+      }
+    ],
+    "dnsteal.0.76": [
+      {
+        "cluster_id": 0,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "DNS日志中出现新IP地址，可能为正常网络行为或初步侦察"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询中出现新IP，疑似C2通信或数据外传尝试"
+        }
+      }
+    ],
+    "dnsteal.1.77": [
+      {
+        "cluster_id": 95,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，可能为DNS隧道或异常流量探测"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似DNS隧道或C2通信"
+        }
+      }
+    ],
+    "dnsteal.1.78": [
+      {
+        "cluster_id": 1252,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "DNS查询频率异常，可能为隧道或数据外传行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似DNS隧道或C2通信"
+        }
+      }
+    ],
+    "dnsteal.2.86": [
+      {
+        "cluster_id": 3215,
+        "size": 2,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "审计日志中出现新的服务启动/停止参数组合，可能为正常服务管理或探测行为。"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似后门安装或异常服务启停，可能用于数据外传"
+        }
+      }
+    ],
+    "escalated_sudo_command.0.85": [
+      {
+        "cluster_id": 2480,
+        "size": 2,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "内部服务器成功通过sudo提权至root，需确认是否为授权操作"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "成功通过sudo提权至root权限，可能为横向移动做准备"
+        }
+      },
+      {
+        "cluster_id": 2481,
+        "size": 13,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "AMiner检测到审计日志中新的凭据和用户会话参数组合，可能为正常行为变化或潜在异常。"
+        },
+        "few_shot": {
+          "risk": "critical",
+          "summary": "目标主机上检测到sudo提权至root、用户切换和凭据操作，属权限提升与横向移动攻击。"
+        }
+      }
+    ],
+    "service_scan.0.79": [
+      {
+        "cluster_id": 2457,
+        "size": 163,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "多主机多服务突发异常事件，疑似自动化扫描探测"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "多主机扫描与探测，疑似攻击前奏"
+        }
+      },
+      {
+        "cluster_id": 2459,
+        "size": 125,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "短时间大量告警，涉及多主机，检测到Nmap扫描行为，疑似外部扫描探测。"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "针对多台主机的主动扫描探测，疑似Nmap发现资产和漏洞"
+        }
+      }
+    ],
+    "webshell_cmd.0.82": [
+      {
+        "cluster_id": 2465,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "内网服务器出现高熵Apache访问请求，可能为扫描或探测行为"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Webshell上传尝试：检测到Apache访问请求中存在高熵字符串，疑似编码或加密payload"
+        }
+      },
+      {
+        "cluster_id": 2466,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "检测到来自10.143.2.4的Apache请求含有高熵数据，疑似Web攻击尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Apache访问请求中出现高熵字符串，疑似webshell上传或命令执行"
+        }
+      },
+      {
+        "cluster_id": 2467,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求中检测到高熵字符串，疑似注入或混淆攻击尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似Webshell上传，Apache请求中出现高熵字符串"
+        }
+      }
+    ],
+    "wpscan.0.81": [
+      {
+        "cluster_id": 2461,
+        "size": 34,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "短时间内大量 Web 错误码和新请求方法，疑似主动扫描或漏洞探测"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "针对Web服务器的快速扫描与异常请求探测"
+        }
+      },
+      {
+        "cluster_id": 2462,
+        "size": 6321,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "短时间内大量Apache访问日志异常，出现新请求方法，疑似自动化扫描或探测"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "来自10.143.2.4的Web服务扫描，探测异常HTTP方法"
+        }
+      }
+    ]
+  }
+}

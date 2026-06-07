@@ -1,0 +1,144 @@
+{
+    "attack_chain_name": "Web应用典型攻击链",
+    "stages": [
+        {
+            "stage_name": "侦察与信息收集",
+            "mitre_tactic": "TA0043 - Reconnaissance",
+            "typical_alert_types": [
+                "A-Dns-Chr",
+                "S-Smt-Wel",
+                "S-Tls-Ssl",
+                "S-Flw-Nmp",
+                "A-Acc-Val1",
+                "W-Acc-400",
+                "A-Acc-Chr2"
+            ],
+            "alert_text_patterns": [
+                "AMiner: New characters in DNS domain.",
+                "Suricata: Alert - SURICATA SMTP no server welcome message",
+                "Suricata: Alert - SURICATA TLS invalid SSLv2 header",
+                "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+                "AMiner: New request method in Apache Access log.",
+                "Wazuh: Web server 400 error code.",
+                "AMiner: New characters in Apache Access request."
+            ],
+            "duration_minutes": "10-30",
+            "key_indicators": [
+                "大量400错误码来自同一源IP",
+                "新的DNS域名或字符出现",
+                "多种服务协议异常扫描",
+                "新的HTTP请求方法出现",
+                "Nmap用户代理检测"
+            ],
+            "benign_looking_but_actually_attack": [
+                "A-Dns-Chr (新DNS域名字符)",
+                "A-Acc-Val1 (新HTTP请求方法)",
+                "A-Acc-Chr2 (新请求字符)",
+                "W-Acc-400 (单次400错误可能为良性，但大量出现则为扫描)"
+            ]
+        },
+        {
+            "stage_name": "初始访问与凭据攻击",
+            "mitre_tactic": "TA0001 - Initial Access / TA0006 - Credential Access",
+            "typical_alert_types": [
+                "S-Htt-Mat",
+                "A-Mon-Rng",
+                "A-Mon-Avg"
+            ],
+            "alert_text_patterns": [
+                "Suricata: Alert - SURICATA HTTP unable to match response to request",
+                "AMiner: CPU value out of expected range in monitoring logs.",
+                "AMiner: CPU value deviates from average in monitoring logs."
+            ],
+            "duration_minutes": "5-30",
+            "key_indicators": [
+                "HTTP响应无法匹配请求（可能为爆破尝试）",
+                "CPU异常升高（离线密码破解）",
+                "登录失败的HTTP匹配告警"
+            ],
+            "benign_looking_but_actually_attack": [
+                "S-Htt-Mat (看似HTTP协议问题，实为大量请求导致)",
+                "A-Mon-Rng, A-Mon-Avg (CPU波动常被当作正常运维，实为破解工具运行)"
+            ]
+        },
+        {
+            "stage_name": "执行与持久化",
+            "mitre_tactic": "TA0002 - Execution / TA0003 - Persistence",
+            "typical_alert_types": [
+                "A-Acc-Ent2",
+                "A-Acc-Clc"
+            ],
+            "alert_text_patterns": [
+                "AMiner: High entropy in Apache Access request.",
+                "AMiner: Unusual occurrence frequencies of Apache Access request methods."
+            ],
+            "duration_minutes": "持续",
+            "key_indicators": [
+                "HTTP请求URL高熵（webshell命令）",
+                "请求方法频率异常（webshell活动）"
+            ],
+            "benign_looking_but_actually_attack": [
+                "A-Acc-Ent2 (高熵请求可能被当作随机内容，实为编码的命令)",
+                "A-Acc-Clc (方法频率变化可能被当作正常访问模式变化)"
+            ]
+        },
+        {
+            "stage_name": "数据外泄",
+            "mitre_tactic": "TA0010 - Exfiltration",
+            "typical_alert_types": [
+                "A-Dns-Val1",
+                "A-Dns-Frq",
+                "A-Aud-Com4"
+            ],
+            "alert_text_patterns": [
+                "AMiner: New ip address in DNS logs.",
+                "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+                "AMiner: New service_start/stop parameter combination in Audit logs."
+            ],
+            "duration_minutes": "持续",
+            "key_indicators": [
+                "DNS查询中出现新的IP地址",
+                "DNS查询频率异常",
+                "审计日志中出现新的服务启停参数组合"
+            ],
+            "benign_looking_but_actually_attack": [
+                "A-Dns-Val1 (新增DNS IP可能被视为正常网络变化)",
+                "A-Dns-Frq (频率异常可能被当作网络波动)",
+                "A-Aud-Com4 (新参数组合可能被当作管理员操作)"
+            ]
+        },
+        {
+            "stage_name": "权限提升与横向移动",
+            "mitre_tactic": "TA0004 - Privilege Escalation / TA0008 - Lateral Movement",
+            "typical_alert_types": [
+                "W-Aut-Pam1",
+                "W-Aut-Uid",
+                "W-Aut-Sud",
+                "A-All-Evt",
+                "A-Aud-Com6"
+            ],
+            "alert_text_patterns": [
+                "Wazuh: PAM: Login session opened.",
+                "Wazuh: User successfully changed UID.",
+                "Wazuh: Successful sudo to ROOT executed.",
+                "AMiner: New event type.",
+                "AMiner: New user_cmd/user_start parameter combination in Audit logs."
+            ],
+            "duration_minutes": "5-15",
+            "key_indicators": [
+                "非预期用户登录会话",
+                "用户UID变更",
+                "首次或异常sudo到root",
+                "新的审计事件类型",
+                "新的用户命令/启动参数组合"
+            ],
+            "benign_looking_but_actually_attack": [
+                "A-All-Evt (新事件类型可能被当作系统变化忽略)",
+                "W-Aut-Pam1 (普通登录会话可能被当作正常运维)",
+                "W-Aut-Uid (UID变更可能被误认为正常用户管理)",
+                "A-Aud-Com6 (新参数组合可能被当作合法命令)"
+            ]
+        }
+    ],
+    "chain_summary": "攻击者首先通过DNS、服务扫描和Web指纹发现目标，利用400错误码和暴力破解获取凭据，上传webshell执行命令，通过DNS隧道外泄数据，最后切换用户并sudo提权以扩大控制范围。"
+}

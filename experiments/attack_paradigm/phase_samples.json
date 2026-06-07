@@ -1,0 +1,1752 @@
+{
+  "scenario_0": {
+    "attacker_change_user.0.7": [
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "W-Aut-Uid",
+        "name": "Wazuh: User successfully changed UID.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_acct parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.21
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_auth parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456451.21
+      }
+    ],
+    "crack_passwords.0.6": [
+      {
+        "short": "A-Mon-Rng",
+        "name": "AMiner: CPU value out of expected range in monitoring logs.",
+        "host": "monitoring",
+        "ip": "192.168.1.116",
+        "raw_time": 1739454113.3
+      },
+      {
+        "short": "A-Mon-Avg",
+        "name": "AMiner: CPU value deviates from average in monitoring logs.",
+        "host": "monitoring",
+        "ip": "192.168.1.116",
+        "raw_time": 1739456093.3
+      }
+    ],
+    "dirb.0.4": [
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453954.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453955.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453956.0
+      },
+      {
+        "short": "W-All-Mul3",
+        "name": "Wazuh: Multiple web server 400 error codes from same source ip.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453957.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453959.0
+      },
+      {
+        "short": "W-All-Mul3",
+        "name": "Wazuh: Multiple web server 400 error codes from same source ip.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453960.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453961.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453962.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453964.0
+      },
+      {
+        "short": "W-All-Mul3",
+        "name": "Wazuh: Multiple web server 400 error codes from same source ip.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453965.0
+      }
+    ],
+    "dns_scan.0.2": [
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      },
+      {
+        "short": "A-Dns-Chr",
+        "name": "AMiner: New characters in DNS domain.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739453834.0
+      }
+    ],
+    "dnsteal.2.1": [
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_start parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "192.168.3.116",
+        "raw_time": 1739390881.49
+      },
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_stop parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "192.168.3.116",
+        "raw_time": 1739390881.49
+      }
+    ],
+    "escalated_sudo_command.0.8": [
+      {
+        "short": "W-Aut-Sud",
+        "name": "Wazuh: First time user executed sudo.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456462.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456464.0
+      },
+      {
+        "short": "W-Aut-Sud",
+        "name": "Wazuh: Successful sudo to ROOT executed.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456464.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456464.83
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_start parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456464.84
+      },
+      {
+        "short": "A-Aud-Com2",
+        "name": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456464.84
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session closed.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456465.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_end parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456465.04
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456469.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739456469.0
+      }
+    ],
+    "webshell_cmd.0.5": [
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453996.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739454001.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739454028.0
+      }
+    ],
+    "wpscan.0.3": [
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453932.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453938.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453938.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453938.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453938.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453938.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453939.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453939.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453940.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.188.179",
+        "raw_time": 1739453941.0
+      }
+    ]
+  },
+  "scenario_1": {
+    "attacker_change_user.0.16": [
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.0
+      },
+      {
+        "short": "W-Aut-Uid",
+        "name": "Wazuh: User successfully changed UID.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_auth parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.08
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_acct parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.09
+      },
+      {
+        "short": "A-Aud-Com2",
+        "name": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.09
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_start parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447701.36
+      }
+    ],
+    "crack_passwords.0.15": [
+      {
+        "short": "A-Mon-Rng",
+        "name": "AMiner: CPU value out of expected range in monitoring logs.",
+        "host": "monitoring",
+        "ip": "172.21.240.106",
+        "raw_time": 1739445304.18
+      },
+      {
+        "short": "A-Mon-Avg",
+        "name": "AMiner: CPU value deviates from average in monitoring logs.",
+        "host": "monitoring",
+        "ip": "172.21.240.106",
+        "raw_time": 1739447059.17
+      }
+    ],
+    "dirb.0.13": [
+      {
+        "short": "A-Acc-Chr2",
+        "name": "AMiner: New characters in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445109.0
+      },
+      {
+        "short": "W-All-Mul3",
+        "name": "Wazuh: Multiple web server 400 error codes from same source ip.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445110.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445112.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445113.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445114.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445115.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445117.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445118.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445119.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445121.0
+      }
+    ],
+    "dnsteal.0.9": [
+      {
+        "short": "A-Dns-Val1",
+        "name": "AMiner: New ip address in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "10.132.56.1",
+        "raw_time": 1739142005.0
+      },
+      {
+        "short": "A-Dns-Val1",
+        "name": "AMiner: New ip address in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "10.132.56.1",
+        "raw_time": 1739142005.0
+      }
+    ],
+    "dnsteal.2.10": [
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_start parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "172.21.240.214",
+        "raw_time": 1739308348.49
+      },
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_stop parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "172.21.240.214",
+        "raw_time": 1739308348.5
+      }
+    ],
+    "escalated_sudo_command.0.17": [
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447714.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447715.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447715.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447715.99
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_start parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447715.99
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447715.99
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session closed.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447716.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447716.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447719.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session closed.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739447719.0
+      }
+    ],
+    "service_scan.0.11": [
+      {
+        "short": "S-Smt-Wel",
+        "name": "Suricata: Alert - SURICATA SMTP no server welcome message",
+        "host": "vpn",
+        "ip": "10.132.56.81",
+        "raw_time": 1739445072.193812
+      },
+      {
+        "short": "S-Smt-Rep",
+        "name": "Suricata: Alert - SURICATA SMTP invalid reply",
+        "host": "mail",
+        "ip": "10.132.56.171",
+        "raw_time": 1739445072.776291
+      },
+      {
+        "short": "S-Tls-Ssl",
+        "name": "Suricata: Alert - SURICATA TLS invalid SSLv2 header",
+        "host": "mail",
+        "ip": "10.132.56.171",
+        "raw_time": 1739445074.987982
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445075.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445075.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445075.0
+      },
+      {
+        "short": "S-Tls-Ssl",
+        "name": "Suricata: Alert - SURICATA TLS invalid SSLv2 header",
+        "host": "mail",
+        "ip": "10.132.56.171",
+        "raw_time": 1739445075.029726
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "10.132.56.81",
+        "raw_time": 1739445075.26353
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "10.132.56.81",
+        "raw_time": 1739445075.264772
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "10.132.56.81",
+        "raw_time": 1739445075.267908
+      }
+    ],
+    "webshell_cmd.0.14": [
+      {
+        "short": "A-Acc-Clc",
+        "name": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445156.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445223.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445225.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445254.0
+      }
+    ],
+    "wpscan.0.12": [
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445089.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445095.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445095.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445095.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445095.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445095.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445095.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445096.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445096.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "172.21.241.88",
+        "raw_time": 1739445097.0
+      }
+    ]
+  },
+  "scenario_2": {
+    "attacker_change_user.0.27": [
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.0
+      },
+      {
+        "short": "W-Aut-Uid",
+        "name": "Wazuh: User successfully changed UID.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_acct parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.7
+      },
+      {
+        "short": "A-Aud-Com2",
+        "name": "AMiner: New cred_acq parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.7
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_auth parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.7
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_start parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465512.78
+      }
+    ],
+    "dirb.0.24": [
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739428769.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739428877.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739428985.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429084.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429179.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429276.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429372.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429469.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429563.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429655.0
+      }
+    ],
+    "dnsteal.0.18": [
+      {
+        "short": "A-Dns-Val1",
+        "name": "AMiner: New ip address in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739142007.0
+      },
+      {
+        "short": "A-Dns-Val1",
+        "name": "AMiner: New ip address in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739142007.0
+      }
+    ],
+    "dnsteal.1.19": [
+      {
+        "short": "A-Dns-Frq",
+        "name": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739163234.0
+      }
+    ],
+    "dnsteal.1.20": [
+      {
+        "short": "A-Dns-Frq",
+        "name": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739248922.0
+      }
+    ],
+    "dnsteal.1.21": [
+      {
+        "short": "A-Dns-Frq",
+        "name": "AMiner: Unusual occurrence frequencies of query records in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739250001.0
+      }
+    ],
+    "dnsteal.2.22": [
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_stop parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "192.168.3.116",
+        "raw_time": 1739334445.22
+      },
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_start parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "192.168.3.116",
+        "raw_time": 1739334445.22
+      }
+    ],
+    "escalated_sudo_command.0.28": [
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465527.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.0
+      },
+      {
+        "short": "W-Aut-Sud",
+        "name": "Wazuh: Successful sudo to ROOT executed.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_cmd parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.34
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_start parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.34
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.34
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_end parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465530.35
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465533.0
+      },
+      {
+        "short": "W-Aut-Sud",
+        "name": "Wazuh: Successful sudo to ROOT executed.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739465533.0
+      }
+    ],
+    "service_scan.0.23": [
+      {
+        "short": "S-Smt-Wel",
+        "name": "Suricata: Alert - SURICATA SMTP no server welcome message",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739428755.89849
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739428758.0
+      },
+      {
+        "short": "S-Tls-Ssl",
+        "name": "Suricata: Alert - SURICATA TLS invalid SSLv2 header",
+        "host": "mail",
+        "ip": "10.38.242.195",
+        "raw_time": 1739428758.711607
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "inet-firewall",
+        "ip": "172.27.180.4",
+        "raw_time": 1739428758.879605
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "webserver",
+        "ip": "10.38.243.24",
+        "raw_time": 1739428758.880024
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "cloud_share",
+        "ip": "10.38.242.230",
+        "raw_time": 1739428758.971738
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739428759.0
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "webserver",
+        "ip": "10.38.243.24",
+        "raw_time": 1739428759.079607
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "10.38.243.125",
+        "raw_time": 1739428759.159799
+      },
+      {
+        "short": "S-Htt-Mat",
+        "name": "Suricata: Alert - SURICATA HTTP unable to match response to request",
+        "host": "vpn",
+        "ip": "10.38.243.125",
+        "raw_time": 1739428759.16544
+      }
+    ],
+    "webshell_cmd.0.26": [
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429812.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429817.0
+      }
+    ],
+    "wpscan.0.25": [
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429767.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429777.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429778.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429780.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429782.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429784.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429787.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429788.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429790.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.2.114",
+        "raw_time": 1739429792.0
+      }
+    ]
+  },
+  "scenario_5": {
+    "attacker_change_user.0.62": [
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "W-Aut-Uid",
+        "name": "Wazuh: User successfully changed UID.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.0
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_auth parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.66
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_acct parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357897.66
+      }
+    ],
+    "crack_passwords.0.61": [
+      {
+        "short": "A-Mon-Rng",
+        "name": "AMiner: CPU value out of expected range in monitoring logs.",
+        "host": "monitoring",
+        "ip": "192.168.104.214",
+        "raw_time": 1739355943.5
+      },
+      {
+        "short": "A-Mon-Avg",
+        "name": "AMiner: CPU value deviates from average in monitoring logs.",
+        "host": "monitoring",
+        "ip": "192.168.104.214",
+        "raw_time": 1739357068.5
+      }
+    ],
+    "dirb.0.57": [
+      {
+        "short": "A-Acc-Chr2",
+        "name": "AMiner: New characters in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355722.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355723.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355724.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355725.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355726.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355727.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355729.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355730.0
+      },
+      {
+        "short": "W-All-Mul3",
+        "name": "Wazuh: Multiple web server 400 error codes from same source ip.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355731.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355732.0
+      }
+    ],
+    "dnsteal.0.54": [
+      {
+        "short": "A-Dns-Val1",
+        "name": "AMiner: New ip address in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "10.229.0.4",
+        "raw_time": 1739142009.0
+      },
+      {
+        "short": "A-Dns-Val1",
+        "name": "AMiner: New ip address in DNS logs.",
+        "host": "inet-firewall",
+        "ip": "10.229.0.4",
+        "raw_time": 1739142009.0
+      }
+    ],
+    "dnsteal.2.55": [
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_stop parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "192.168.104.218",
+        "raw_time": 1739254578.02
+      },
+      {
+        "short": "A-Aud-Com4",
+        "name": "AMiner: New service_start parameter combination in Audit logs.",
+        "host": "internal_share",
+        "ip": "192.168.104.218",
+        "raw_time": 1739254578.02
+      }
+    ],
+    "escalated_sudo_command.0.63": [
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357907.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.0
+      },
+      {
+        "short": "W-Aut-Pam1",
+        "name": "Wazuh: PAM: Login session opened.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.0
+      },
+      {
+        "short": "W-Aut-Sud",
+        "name": "Wazuh: Successful sudo to ROOT executed.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.06
+      },
+      {
+        "short": "A-Aud-Com6",
+        "name": "AMiner: New user_start parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.06
+      },
+      {
+        "short": "A-Aud-Com2",
+        "name": "AMiner: New cred_refr parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.06
+      },
+      {
+        "short": "A-Aud-Com2",
+        "name": "AMiner: New cred_disp parameter combination in Audit logs.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357909.1
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357934.0
+      },
+      {
+        "short": "A-All-Evt",
+        "name": "AMiner: New event type.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739357934.0
+      }
+    ],
+    "online_cracking.0.60": [
+      {
+        "short": "S-Htt-Mat",
+        "name": "Suricata: Alert - SURICATA HTTP unable to match response to request",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355879.481507
+      },
+      {
+        "short": "S-Htt-Mat",
+        "name": "Suricata: Alert - SURICATA HTTP unable to match response to request",
+        "host": "inet-firewall",
+        "ip": "10.229.0.4",
+        "raw_time": 1739355879.481555
+      },
+      {
+        "short": "S-Htt-Mat",
+        "name": "Suricata: Alert - SURICATA HTTP unable to match response to request",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355879.494698
+      },
+      {
+        "short": "S-Htt-Mat",
+        "name": "Suricata: Alert - SURICATA HTTP unable to match response to request",
+        "host": "inet-firewall",
+        "ip": "10.229.0.4",
+        "raw_time": 1739355879.494747
+      }
+    ],
+    "service_scan.0.56": [
+      {
+        "short": "S-Smt-Wel",
+        "name": "Suricata: Alert - SURICATA SMTP no server welcome message",
+        "host": "mail",
+        "ip": "172.21.131.50",
+        "raw_time": 1739355703.696785
+      },
+      {
+        "short": "S-Smt-Rep",
+        "name": "Suricata: Alert - SURICATA SMTP invalid reply",
+        "host": "mail",
+        "ip": "172.21.131.50",
+        "raw_time": 1739355704.233176
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355706.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355706.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355706.0
+      },
+      {
+        "short": "S-Tls-Ssl",
+        "name": "Suricata: Alert - SURICATA TLS invalid SSLv2 header",
+        "host": "mail",
+        "ip": "172.21.131.50",
+        "raw_time": 1739355706.4549
+      },
+      {
+        "short": "S-Tls-Ssl",
+        "name": "Suricata: Alert - SURICATA TLS invalid SSLv2 header",
+        "host": "mail",
+        "ip": "172.21.131.50",
+        "raw_time": 1739355706.496814
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "172.21.128.119",
+        "raw_time": 1739355706.61958
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "172.21.128.119",
+        "raw_time": 1739355706.622962
+      },
+      {
+        "short": "S-Flw-Nmp",
+        "name": "Suricata: Alert - ET SCAN Possible Nmap User-Agent Observed",
+        "host": "vpn",
+        "ip": "172.21.128.119",
+        "raw_time": 1739355706.623324
+      }
+    ],
+    "webshell_cmd.0.59": [
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355854.0
+      },
+      {
+        "short": "A-Acc-Clc",
+        "name": "AMiner: Unusual occurrence frequencies of Apache Access request methods.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355854.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355856.0
+      },
+      {
+        "short": "A-Acc-Ent2",
+        "name": "AMiner: High entropy in Apache Access request.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355885.0
+      }
+    ],
+    "wpscan.0.58": [
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355743.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355751.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355753.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355754.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355755.0
+      },
+      {
+        "short": "W-Acc-400",
+        "name": "Wazuh: Web server 400 error code.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355756.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355758.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355759.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355760.0
+      },
+      {
+        "short": "A-Acc-Val1",
+        "name": "AMiner: New request method in Apache Access log.",
+        "host": "intranet_server",
+        "ip": "192.168.104.155",
+        "raw_time": 1739355761.0
+      }
+    ]
+  }
+}

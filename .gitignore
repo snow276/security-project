@@ -1,0 +1,20 @@
+# Data files (large, excluded from git)
+AlertBERT/aitads_augmented/
+AlertBERT/aitnds/
+AlertBERT/aitldsv2/
+AlertBERT/alerts_csv/
+AlertBERT/alerts_json/
+*.npz
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Secrets
+deepseek-apikey.txt
+
+# IDE
+.vscode/
+.idea/

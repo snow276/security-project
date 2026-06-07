@@ -1,0 +1,85 @@
+{
+  "config": {
+    "model_id": "mlm_1l_4h_16d_original_default_params_60k",
+    "aitads_a_config": "original",
+    "confidence": {
+      "min_cluster_size": 3,
+      "max_intra_cluster_variance": 0.08,
+      "boundary_alpha": 0.5,
+      "boundary_fraction_threshold": 0.5,
+      "max_time_span": 5.0,
+      "tau_high": 0.7,
+      "tau_low": 0.45
+    },
+    "llm_enabled": false
+  },
+  "eval_summary": {
+    "baseline_purity": {
+      "mean": 0.9991911975284224,
+      "std": 0.0005447703288295456
+    },
+    "refined_purity": {
+      "mean": 0.9991911975284224,
+      "std": 0.0005447703288295456
+    },
+    "delta_purity": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "baseline_completeness": {
+      "mean": 0.47246123025667397,
+      "std": 0.3245264080727951
+    },
+    "refined_completeness": {
+      "mean": 0.47246123025667397,
+      "std": 0.3245264080727951
+    },
+    "delta_completeness": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "baseline_v_measure": {
+      "mean": 0.5711740819740009,
+      "std": 0.3204831063647748
+    },
+    "refined_v_measure": {
+      "mean": 0.5711740819740009,
+      "std": 0.3204831063647748
+    },
+    "delta_v_measure": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "baseline_ari": {
+      "mean": 0.45665867629718165,
+      "std": 0.4368141592931739
+    },
+    "refined_ari": {
+      "mean": 0.45665867629718165,
+      "std": 0.4368141592931739
+    },
+    "delta_ari": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "baseline_nmi": {
+      "mean": 0.2624419145216666,
+      "std": 0.14839907152146714
+    },
+    "refined_nmi": {
+      "mean": 0.2624419145216666,
+      "std": 0.14839907152146714
+    },
+    "delta_nmi": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "operational": {
+      "total_clusters": 95973,
+      "total_low_confidence": 61862,
+      "total_refinements": 0,
+      "llm_call_rate": 0.0,
+      "low_confidence_pct": 64.45771206485156
+    }
+  }
+}

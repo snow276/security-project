@@ -1,0 +1,72 @@
+diff --git a/AlertBERT/alertbert/models.py b/AlertBERT/alertbert/models.py
+index db22180..ad254ad 100644
+--- a/AlertBERT/alertbert/models.py
++++ b/AlertBERT/alertbert/models.py
+@@ -1039,10 +1039,10 @@ class AbstractDatasetGroupingModel:
+             If implemented, groups the dataset based on the underlying model.
+     """
+ 
+-    def __call__(self, data: AlertDataset) -> np.ndarray:
+-        return self.forward(data)
++    def __call__(self, data: AlertDataset, **kwargs):
++        return self.forward(data, **kwargs)
+ 
+-    def forward(self, data: AlertDataset) -> np.ndarray:
++    def forward(self, data: AlertDataset, **kwargs) -> np.ndarray:
+         """If implemented, embeds the dataset based on its attributes."""
+         raise NotImplementedError("forward method must be implemented in subclass!")
+ 
+@@ -1117,7 +1117,7 @@ class AlertBERT(AbstractDatasetGroupingModel):
+         self.timedelta = TimeDelta(delta=delta)
+         self.metric = CombinedTimeCosineMetric(theta=theta)
+ 
+-    def forward(self, data: AlertDataset) -> np.ndarray:
++    def forward(self, data: AlertDataset, return_details: bool = False):
+         # get embeddings of full dataset
+         embeddings = self.get_embeddings(data)
+ 
+@@ -1312,6 +1312,18 @@ class AlertBERT(AbstractDatasetGroupingModel):
+         assert alert_idx_offset == len(data)
+         assert len(pred) == len(data)
+         assert np.max(pred) + 1 == next_label
++
++        if return_details:
++            return {
++                "labels": pred,
++                "embeddings": embeddings,
++                "pre_cluster_ids": pre_clustering,
++                "model_params": {
++                    "delta": self.delta,
++                    "theta": self.theta,
++                    "dim_reduction": self.dim_reduction.n_components if self.dim_reduction else None,
++                },
++            }
+         return pred
+ 
+     def dist_matrix_to_connected_components(
+@@ -1474,6 +1486,9 @@ class AlertBERT(AbstractDatasetGroupingModel):
+         remainder = len(data) % self.readout
+         embeddings = []
+ 
++        # Determine the device the model is on (GPU or CPU)
++        model_device = next(self.model.parameters()).device
++
+         for i in range(num_contexts):
+             batch = self.collate_fn(
+                 [
+@@ -1483,6 +1498,7 @@ class AlertBERT(AbstractDatasetGroupingModel):
+                     ]
+                 ]
+             )
++            batch = batch.to(model_device)
+             batch = self.model(batch)
+             embeddings.append(
+                 batch["output"][0, self.padding : -self.padding].cpu().numpy()
+@@ -1493,6 +1509,7 @@ class AlertBERT(AbstractDatasetGroupingModel):
+             batch = self.collate_fn(
+                 [data[(i + 1) * self.readout - self.padding : len(data) + self.padding]]
+             )
++            batch = batch.to(model_device)
+             batch = self.model(batch)
+             embeddings.append(
+                 batch["output"][0, self.padding : -self.padding].cpu().numpy()

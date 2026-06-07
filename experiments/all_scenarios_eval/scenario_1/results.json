@@ -1,0 +1,230 @@
+{
+  "scenario": 1,
+  "total_clusters": 8136,
+  "attack_phases": [
+    "attacker_change_user.0.16",
+    "crack_passwords.0.15",
+    "dirb.0.13",
+    "dnsteal.0.9",
+    "dnsteal.2.10",
+    "escalated_sudo_command.0.17",
+    "service_scan.0.11",
+    "webshell_cmd.0.14",
+    "wpscan.0.12"
+  ],
+  "attack_clusters": 15,
+  "zero_shot": {
+    "cost": 0.0062222000000000015,
+    "calls": 35,
+    "time": 148.43967700004578,
+    "correct": 8,
+    "missed": 7
+  },
+  "few_shot": {
+    "cost": 0.0104211,
+    "calls": 35,
+    "time": 186.57159805297852,
+    "correct": 11,
+    "missed": 4
+  },
+  "phases": {
+    "attacker_change_user.0.16": [
+      {
+        "cluster_id": 7262,
+        "size": 10,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内网服务器出现未知认证参数组合，可能为账户异常或攻击尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似通过sudo提权或用户切换进行横向移动"
+        }
+      }
+    ],
+    "crack_passwords.0.15": [
+      {
+        "cluster_id": 7160,
+        "size": 1,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "CPU值超出预期范围，系统性能监控异常，非安全攻击"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "疑似暴力破解导致的CPU异常波动，但缺乏其他证据"
+        }
+      },
+      {
+        "cluster_id": 7213,
+        "size": 1,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "监控告警：CPU使用率偏离平均值，属正常性能波动"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似暴力破解导致的CPU异常波动"
+        }
+      }
+    ],
+    "dirb.0.13": [
+      {
+        "cluster_id": 7149,
+        "size": 4522,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "短时间内大量400错误，疑似Web应用扫描或暴力攻击"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "来自172.21.241.88的Web服务扫描探测，大量400错误请求"
+        }
+      }
+    ],
+    "dnsteal.0.9": [
+      {
+        "cluster_id": 0,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "DNS日志中出现新的IP地址，可能为常规解析记录"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS日志中出现新IP地址，疑似潜在C2通信或数据外传"
+        }
+      }
+    ],
+    "dnsteal.2.10": [
+      {
+        "cluster_id": 4252,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "审计日志记录服务启动与停止的新参数组合，可能为正常运维操作"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似在内部主机安装或停止服务，可能为后门或持久化操作"
+        }
+      }
+    ],
+    "escalated_sudo_command.0.17": [
+      {
+        "cluster_id": 7264,
+        "size": 15,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "AMiner检测到新审计事件类型和参数组合，属正常基线调整"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "攻击者通过sudo提权至root并切换用户，可能进行横向移动"
+        }
+      },
+      {
+        "cluster_id": 7265,
+        "size": 13,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "AMiner检测到新的审计事件类型和参数组合，属于系统正常行为变化"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似利用sudo提权至root并切换用户实现横向移动"
+        }
+      }
+    ],
+    "service_scan.0.11": [
+      {
+        "cluster_id": 7146,
+        "size": 87,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内网横向扫描探测，涉及Nmap用户代理和多个Web服务器400错误"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "外部源IP发起Nmap扫描和Web 400错误探测"
+        }
+      }
+    ],
+    "webshell_cmd.0.14": [
+      {
+        "cluster_id": 7152,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "Apache访问请求方法频率异常，可能是扫描或探测行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求方法频次异常，疑似Webshell上传或命令执行"
+        }
+      },
+      {
+        "cluster_id": 7154,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "检测到Apache访问请求中存在高熵，疑似攻击探测或变形请求"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Webshell上传尝试：检测到Apache访问请求高熵特征，疑似恶意payload"
+        }
+      },
+      {
+        "cluster_id": 7155,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求高熵，疑似扫描或漏洞利用"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "来自172.21.241.88的高熵Web请求，疑似webshell上传或命令执行"
+        }
+      },
+      {
+        "cluster_id": 7158,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求高熵值，疑似扫描或探测攻击"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似Webshell上传攻击，Apache访问请求中出现高熵字符串"
+        }
+      }
+    ],
+    "wpscan.0.12": [
+      {
+        "cluster_id": 7147,
+        "size": 31,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Web服务器目录枚举与禁止目录访问尝试"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "内网主机对intranet_server进行Web目录扫描和400错误探测"
+        }
+      },
+      {
+        "cluster_id": 7148,
+        "size": 1478,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "对内部服务器intranet_server的CMS系统进行暴力破解登录尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "对CMS系统（WordPress/Joomla）的暴力破解攻击"
+        }
+      }
+    ]
+  }
+}

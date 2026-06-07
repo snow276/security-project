@@ -1,0 +1,37 @@
+{
+  "config": {
+    "experiment_dir": "experiments/baseline_original",
+    "scenario": 0,
+    "model": "deepseek-v4-flash",
+    "max_cost": Infinity,
+    "max_clusters_tier1": null,
+    "max_clusters_tier2": 20
+  },
+  "timing": {
+    "step1_load_model": 8.263712882995605,
+    "step2_load_labels": 0.019121170043945312,
+    "step3_embeddings": 0.6791403293609619,
+    "step4_score_clusters": 7.67049765586853,
+    "step5_tier1": 27364.15751194954,
+    "step6_tier2": 28.009605646133423,
+    "total": 27408.80043029785
+  },
+  "tier1_stats": {
+    "total_calls": 7702,
+    "total_tokens": 6489251,
+    "total_cost": 1.2222395000000024,
+    "parse_failures": 0,
+    "avg_cost_per_call": 0.00015869118410802418
+  },
+  "tier2_stats": {
+    "total_calls": 1,
+    "total_tokens": 5948,
+    "total_cost": 0.0015233,
+    "parse_failures": 0,
+    "avg_cost_per_call": 0.0015233
+  },
+  "total_cost": 1.2237628000000023,
+  "total_llm_calls": 7703,
+  "num_tier1_clusters": 7702,
+  "num_tier2_clusters": 20
+}

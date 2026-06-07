@@ -1,0 +1,300 @@
+{
+  "scenario": 6,
+  "total_clusters": 6681,
+  "attack_phases": [
+    "attacker_change_user.0.74",
+    "crack_passwords.0.73",
+    "dirb.0.70",
+    "dnsteal.0.64",
+    "dnsteal.1.65",
+    "dnsteal.1.66",
+    "dnsteal.2.67",
+    "escalated_sudo_command.0.75",
+    "online_cracking.0.72",
+    "service_scan.0.68",
+    "webshell_cmd.0.71",
+    "wpscan.0.69"
+  ],
+  "zero_shot": {
+    "cost": 0.006992600000000002,
+    "calls": 40,
+    "time": 175.65257859230042,
+    "correct": 9,
+    "missed": 11
+  },
+  "few_shot": {
+    "cost": 0.0125902,
+    "calls": 40,
+    "time": 257.5579845905304,
+    "correct": 16,
+    "missed": 4
+  },
+  "phases": {
+    "attacker_change_user.0.74": [
+      {
+        "cluster_id": 4126,
+        "size": 10,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "疑似用户提权操作（UID变更）伴随审计日志新模式"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似权限提升攻击：短时间内出现UID变更及多个新审计参数组合，符合横向移动/提权模式"
+        }
+      }
+    ],
+    "crack_passwords.0.73": [
+      {
+        "cluster_id": 4119,
+        "size": 1,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "监控日志中CPU值偏离平均值，属于性能异常或管理性事件，无攻击迹象。"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "可疑CPU异常波动，可能为离线密码破解或恶意进程，但缺乏关联证据"
+        }
+      }
+    ],
+    "dirb.0.70": [
+      {
+        "cluster_id": 4062,
+        "size": 410561,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "针对内网Web服务器的大规模401/400错误扫描或攻击"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "源IP 10.35.35.206 对 intranet_server 发起大量400错误码扫描，疑似Web应用侦察与暴力破解尝试"
+        }
+      }
+    ],
+    "dnsteal.0.64": [
+      {
+        "cluster_id": 0,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "DNS日志中检测到新IP地址，属于正常网络行为记录。"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "DNS查询中出现新IP地址，可能为数据外泄或扫描行为"
+        }
+      }
+    ],
+    "dnsteal.1.65": [
+      {
+        "cluster_id": 258,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "IP 10.35.32.1 出现异常DNS查询频率，疑似DNS隧道或C2通信"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似数据外泄或隧道通信"
+        }
+      }
+    ],
+    "dnsteal.1.66": [
+      {
+        "cluster_id": 360,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似DNS隧道或数据外传"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似数据外泄或隧道活动"
+        }
+      }
+    ],
+    "dnsteal.2.67": [
+      {
+        "cluster_id": 2067,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "审计日志中检测到服务启停参数变化，可能为正常运维操作"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "内部主机internal_share上出现新的服务启停参数组合，可能为后门安装或安全服务关闭"
+        }
+      }
+    ],
+    "escalated_sudo_command.0.75": [
+      {
+        "cluster_id": 4127,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "单次成功sudo提权至root，可能为管理员操作或攻击行为"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "内网服务器上出现一次成功的sudo提权到root操作"
+        }
+      },
+      {
+        "cluster_id": 4128,
+        "size": 3,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "正常的管理员sudo提权操作，无攻击迹象"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似通过登录会话获取凭据后sudo提权至root"
+        }
+      },
+      {
+        "cluster_id": 4129,
+        "size": 3,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "正常的 sudo 提权及登录会话操作"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "内网主机出现sudo提权及登录会话，疑似权限提升攻击"
+        }
+      }
+    ],
+    "online_cracking.0.72": [
+      {
+        "cluster_id": 4068,
+        "size": 4,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "HTTP请求与响应不匹配，疑似协议异常或误报"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似HTTP请求与响应不匹配的暴力破解尝试，针对内部服务器和防火墙。"
+        }
+      }
+    ],
+    "service_scan.0.68": [
+      {
+        "cluster_id": 4054,
+        "size": 167,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "对多个内部主机进行SSH扫描探测"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "大规模网络扫描与侦察，涉及SSH、HTTP、TLS等多种协议，探测多台关键服务器。"
+        }
+      },
+      {
+        "cluster_id": 4055,
+        "size": 36,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "多主机同时被Nmap扫描探测，伴随Web 400错误，疑似信息收集行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "多主机遭受Nmap扫描与HTTP 400错误探测，疑似攻击者进行侦察"
+        }
+      }
+    ],
+    "webshell_cmd.0.71": [
+      {
+        "cluster_id": 4064,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "疑似恶意探测或漏洞扫描，Apache请求出现高熵特征"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似webshell通过高熵HTTP请求执行命令"
+        }
+      },
+      {
+        "cluster_id": 4065,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求中出现高熵内容，疑似隐藏恶意载荷"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "疑似WebShell命令执行，Apache请求URL高熵表明编码命令活动"
+        }
+      },
+      {
+        "cluster_id": 4069,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求中检测到高熵，疑似Webshell或攻击payload"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "Apache访问请求高熵，疑似webshell命令执行"
+        }
+      }
+    ],
+    "wpscan.0.69": [
+      {
+        "cluster_id": 4056,
+        "size": 2,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "探测非标准HTTP方法导致400错误，可能为扫描或发现漏洞"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "源IP 10.35.35.206 对内网服务器进行HTTP方法探测和400错误扫描"
+        }
+      },
+      {
+        "cluster_id": 4057,
+        "size": 26,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内网服务器遭自动化扫描，尝试访问禁止目录索引及新HTTP方法"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "内网IP对intranet_server进行Web目录扫描与错误码探测，属于侦察阶段"
+        }
+      },
+      {
+        "cluster_id": 4058,
+        "size": 5,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "来自同一IP的Web服务器错误及异常HTTP方法，疑似Web应用探测或漏洞扫描。"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "内网IP对Web服务器发起扫描和探测，使用新请求方法并触发400/500错误"
+        }
+      },
+      {
+        "cluster_id": 4059,
+        "size": 9488,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "来自单一IP的Web应用扫描，大量HTTP 400错误及异常请求方法"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "源IP对intranet_server进行大规模Web路径扫描，利用400错误码探测漏洞"
+        }
+      }
+    ]
+  },
+  "upgraded": 7,
+  "downgraded": 0
+}

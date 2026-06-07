@@ -1,0 +1,303 @@
+{
+  "scenario": 3,
+  "total_clusters": 18188,
+  "attack_phases": [
+    "attacker_change_user.0.40",
+    "crack_passwords.0.39",
+    "dirb.0.36",
+    "dnsteal.0.29",
+    "dnsteal.1.30",
+    "dnsteal.1.31",
+    "dnsteal.1.32",
+    "dnsteal.1.33",
+    "dnsteal.2.34",
+    "escalated_sudo_command.0.41",
+    "service_scan.0.35",
+    "webshell_cmd.0.38",
+    "wpscan.0.37"
+  ],
+  "zero_shot": {
+    "cost": 0.0078039,
+    "calls": 40,
+    "time": 198.49392867088318,
+    "correct": 11,
+    "missed": 9
+  },
+  "few_shot": {
+    "cost": 0.012718700000000001,
+    "calls": 40,
+    "time": 261.58156418800354,
+    "correct": 18,
+    "missed": 2
+  },
+  "phases": {
+    "attacker_change_user.0.40": [
+      {
+        "cluster_id": 12952,
+        "size": 11,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "短时间内多种审计日志新参数组合，疑似认证行为异常"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "短时间内出现新审计参数组合，疑似权限提升攻击"
+        }
+      }
+    ],
+    "crack_passwords.0.39": [
+      {
+        "cluster_id": 12852,
+        "size": 4,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "正常认证成功与系统性能监控事件，无攻击迹象"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "短时间内多次Dovecot认证成功，伴随监控主机CPU异常，疑似凭据窃取或初始访问后的恶意活动。"
+        }
+      }
+    ],
+    "dirb.0.36": [
+      {
+        "cluster_id": 12796,
+        "size": 428882,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "大规模多阶段攻击，涉及TLS握手异常、Web错误和账户暴力破解尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "大规模Web侦察与TLS扫描，存在大量400错误和TLS握手异常"
+        }
+      }
+    ],
+    "dnsteal.0.29": [
+      {
+        "cluster_id": 0,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "DNS日志中出现新的IP地址，可能为正常网络活动"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似DNS隧道或数据外泄：DNS日志中出现新IP地址，可能用于数据外传。"
+        }
+      }
+    ],
+    "dnsteal.1.30": [
+      {
+        "cluster_id": 25,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内网主机DNS查询频率异常，疑似DNS探测或数据外泄行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，可能为DNS隧道数据外泄"
+        }
+      }
+    ],
+    "dnsteal.1.31": [
+      {
+        "cluster_id": 3947,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "内部IP出现异常DNS查询频率，可能为C2通信或DGA活动"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似数据外泄或DNS隧道活动"
+        }
+      }
+    ],
+    "dnsteal.1.32": [
+      {
+        "cluster_id": 3962,
+        "size": 1,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "DNS查询频率异常，可能为探测或信息收集行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似数据外泄或DNS隧道"
+        }
+      }
+    ],
+    "dnsteal.1.33": [
+      {
+        "cluster_id": 5671,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似数据外传或C2通信"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "DNS查询频率异常，疑似数据外泄或DNS隧道活动"
+        }
+      }
+    ],
+    "dnsteal.2.34": [
+      {
+        "cluster_id": 9047,
+        "size": 2,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "审计日志中服务启动/停止参数组合变更，属于常规系统管理事件"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "审计日志中出现新的服务启停参数组合，可能为异常服务控制"
+        }
+      }
+    ],
+    "escalated_sudo_command.0.41": [
+      {
+        "cluster_id": 12955,
+        "size": 1,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "用户首次执行sudo命令，属于正常管理行为"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "首次sudo执行，可能为权限提升尝试"
+        }
+      },
+      {
+        "cluster_id": 12956,
+        "size": 3,
+        "zero_shot": {
+          "risk": "benign",
+          "summary": "正常的管理员登录并通过sudo提权至root操作"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "疑似成功登录后通过sudo提权至root，可能存在权限提升行为"
+        }
+      },
+      {
+        "cluster_id": 12957,
+        "size": 7,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "跨主机提权与认证成功，可能横向移动前奏"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "攻击者通过邮件认证后成功sudo提权至root，并触发新系统调用组合"
+        }
+      }
+    ],
+    "service_scan.0.35": [
+      {
+        "cluster_id": 12794,
+        "size": 83,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "针对邮件服务器的TLS/SSL协议异常攻击尝试"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "针对邮件服务器的快速TLS/HTTP扫描探测行为"
+        }
+      },
+      {
+        "cluster_id": 12795,
+        "size": 154,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "来自多个主机的Nmap扫描探测，可能为攻击前期的信息收集"
+        },
+        "few_shot": {
+          "risk": "low",
+          "summary": "多主机Nmap扫描与HTTP 400错误探测，疑似侦察阶段"
+        }
+      }
+    ],
+    "webshell_cmd.0.38": [
+      {
+        "cluster_id": 12803,
+        "size": 9,
+        "zero_shot": {
+          "risk": "high",
+          "summary": "TLS无效握手攻击与Apache高熵请求，疑似利用TLS漏洞尝试数据窃取或横向移动"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "结合高熵Apache请求与TLS异常，疑似webshell执行后尝试加密通信或外联"
+        }
+      },
+      {
+        "cluster_id": 12804,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache请求高熵异常，疑似Webshell或漏洞利用尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "来自外部IP的高熵URL请求，疑似webshell命令执行"
+        }
+      },
+      {
+        "cluster_id": 12807,
+        "size": 1,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "Apache访问请求高熵，疑似异常通信或探测行为"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "检测到Apache访问请求的高熵特征，疑似webshell命令执行"
+        }
+      }
+    ],
+    "wpscan.0.37": [
+      {
+        "cluster_id": 12798,
+        "size": 28,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "Apache 服务器被探测禁止目录索引及异常请求方法"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "短时间内多种Web扫描探测行为，包括访问禁止目录、产生400错误和新请求方法"
+        }
+      },
+      {
+        "cluster_id": 12799,
+        "size": 6,
+        "zero_shot": {
+          "risk": "low",
+          "summary": "针对内网服务器的异常HTTP请求探测，引发400/500错误与AMiner新事件告警"
+        },
+        "few_shot": {
+          "risk": "medium",
+          "summary": "针对Web服务器的扫描探测，使用了非常规请求方法并触发了400/500错误"
+        }
+      },
+      {
+        "cluster_id": 12800,
+        "size": 6414,
+        "zero_shot": {
+          "risk": "medium",
+          "summary": "短时间内对多台主机进行扫描和暴力破解尝试"
+        },
+        "few_shot": {
+          "risk": "high",
+          "summary": "短时内对intranet_server的Web扫描与暴力破解尝试，伴随TLS异常握手"
+        }
+      }
+    ]
+  },
+  "upgraded": 8,
+  "downgraded": 1
+}
