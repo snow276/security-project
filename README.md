@@ -66,6 +66,29 @@ AlertBERT 是一个自监督告警分组框架，包含两个阶段：
 
 **关键观察**：Purity 接近完美（99.92%），说明簇内部几乎不会混入不同攻击的告警。但 Completeness 仅 0.47 且波动极大（标准差 0.32），说明同一攻击链的告警被拆散到了多个簇中。
 
+### AlertBERT 复现说明
+
+本项目的 AlertBERT 基线基于官方开源代码库（https://github.com/ait-aecid/AlertBERT）复现。我们使用其提供的 `alertbert.train_mlm` 模块自行训练了掩码语言模型，未直接使用作者发布的预训练权重。
+
+**训练配置**：
+- 模型结构：1 层 Transformer，4 个注意力头，每头 16 维，总维度 64
+- 训练字段：告警类型（`short`）和主机名（`host`）
+- 批次大小：16，上下文长度：4096
+- 训练量：58,200 次参数更新（约 2,910 个 epoch）
+- 训练时间：约 5 小时（NVIDIA 4090-48GB，CUDA_VISIBLE_DEVICES=0）
+
+**复现验证指标**（MLM 验证集）：
+- 告警类型（short）预测准确率：86.5%，Top-3 准确率：99.3%
+- 主机名（host）预测准确率：88.0%，Top-3 准确率：94.3%
+
+**后续所有实验均基于我们自己训练的该模型**：
+- 基线评估（`experiments/baseline_original/`）
+- Smart Split 评估（`experiments/smart_split_eval/`）
+- 全簇精度评估（`experiments/precision_s7/`）
+- LLM 语义分析（`experiments/llm_analysis_s0/`）
+
+使用的模型检查点为 `AlertBERT/saved_models/mlm_1l_4h_16d_original_default_params_60k.pt`。
+
 ---
 
 ## 二：Completeness 困境
